@@ -1,0 +1,550 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  vertical-align: baseline; }
+
+/*  Syntax Quick Reference
+  --------------------------
+  column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
+  span($ratio: 1, $offset: 0)
+  shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter)
+  unshift()
+  edit()
+  center($max_width: 1410px, $pad: 0)
+  stack($pad: 0, $align: false)
+  unstack()
+  align($direction: both)
+  cf()
+*/
+/**
+ * Grid settings.
+ * All values are defaults and can therefore be easily overidden.
+ */
+/**
+ * List functions courtesy of the wonderful folks at Team Sass.
+ * Check out their awesome grid: Singularity.
+ */
+/**
+ * Get  percentage from a given ratio.
+ * @param {number} [$ratio=1] - The column ratio of the element.
+ * @returns {number} - The percentage value.
+ */
+/**
+ * Work out the column widths based on the ratio and gutter sizes.
+ * @param {number} [$ratios=1] - The column ratio of the element.
+ * @param {number} [$gutter=$jeet-gutter] - The gutter for the column.
+ * @returns {list} $width $gutter - A list containing the with and gutter for the element.
+ */
+/**
+ * Get the set layout direction for the project.
+ * @returns {string} $direction - The layout direction.
+ */
+/**
+ * Replace a specified list value with a new value (uses built in set-nth() if available)
+ * @param {list} $list - The list of values you want to alter.
+ * @param {number} $index - The index of the list item you want to replace.
+ * @param {*} $value - The value you want to replace $index with.
+ * @returns {list} $list - The list with the value replaced or removed.
+ * @warn if an invalid index is supplied.
+ */
+/**
+ * Reverse a list (progressively enhanced for Sass 3.3)
+ * @param {list} $list - The list of values you want to reverse.
+ * @returns {list} $result - The reversed list.
+ */
+/**
+ * Get the opposite direction to a given value.
+ * @param {string} $dir - The direction you want the opposite of.
+ * @returns {string} - The opposite direction to $dir.
+ * @warn if an incorrect string is provided.
+ */
+/**
+ * Style an element as a column with a gutter.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [$cycle=0] - Easily create an nth column grid where $cycle equals the number of columns.
+ * @param {number} [$uncycle=0] - Undo a previous cycle value to allow for a new one.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column mixin.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Get the width of a column and nothing else.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Get the gutter size of a column and nothing else.
+ * @param {number} [ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [gutter=jeet.gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column-width function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * An alias for the column-gutter function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Style an element as a column without any gutters for a seamless row.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [cycle=0] - Easily create an nth column grid where cycle equals the number of columns.
+ * @param {number} [uncycle=0] - Undo a previous cycle value to allow for a new one.
+ */
+/**
+ * Reorder columns without altering the HTML.
+ * @param {number} [$ratios=0] - Specify how far along you want the element to move.
+ * @param {string} [$col-or-span=column] - Specify whether the element has a gutter or not.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Reset an element that has had shift() applied to it.
+ */
+/**
+ * View the grid and its layers for easy debugging.
+ * @param {string} [$color=black] - The background tint applied.
+ * @param {boolean} [$important=false] - Whether to apply the style as !important.
+ */
+/**
+ *  Alias for edit().
+ */
+/**
+ * Horizontally center an element.
+ * @param {number} [$max-width=1410px] - The max width the element can be.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ */
+/**
+ * Uncenter an element.
+ */
+/**
+ * Stack an element so that nothing is either side of it.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ * @param {boolean/string} [$align=false] - Specify the text align for the element.
+ */
+/**
+ * Unstack an element.
+ */
+/**
+ * Center an element on either or both axes.
+ * @requires A parent container with relative positioning.
+ * @param {string} [$direction=both] - Specify which axes to center the element on.
+ */
+/**
+ * Apply a clearfix to an element.
+ */
+
+html,
+body {
+  background-color: #56B2D8;
+  height: 100%;
+  width: 100%;
+
+  color: #333;
+  font-family: "Press Start 2P", cursive;
+  overflow: hidden; }
+
+.panel {
+  width: 100%;
+  height: 100%; }
+  .panel header {
+    width: 100%;
+    height: 13%;
+    background-color: #C41C29; }
+
+/* phone */
+
+    @media (max-width: 410px) {
+      .panel header {
+      height: 15% !important;}
+      .box {
+      background-image: none !important;}
+      .talk input {
+      text-align: center !Important;
+      background-color: #FFFFFF !important;
+      border: 5px solid !important;
+      font-size: 30px !important;
+      width: 80% !important;
+      height: 30% !important;
+      margin-left: 9% !important;}
+      .text {
+      width: 90% !important;
+      max-height: 100% !important;
+      margin-left: 4% !important;}
+      .talk .text .message, .talk .text .comment {
+      font-size: 20px !important;
+      padding: 15px !important;}
+      .panel header h1 {
+      padding-top: 5% !important;}
+    }
+
+    @media (max-width: 980px) {
+      .panel header {
+      height: 13%; }
+      .panel header h1 {
+      font-size: 23px !important;}
+      .box {
+      width: 110% !important;
+      margin-left: -5% !important;}
+    }
+
+    @media (min-width: 1400px){
+    .panel header h1 {
+      font-size: 40px !important;
+      padding-top: 2.6% !important; }
+    .panel header {
+    width: 100%;
+    height: 13%;
+    background-color: #C41C29; }
+    .intro {
+    height:77% !important;}
+    .talk .text .message, .talk .text .comment {
+    font-size: 30px !important;
+    padding: 20px !important; }
+    }
+
+/* 1024px sized */
+    .panel header h1 {
+      font-size: 30px;
+      text-align: center;
+      color: #fff;
+      padding-top: 30px; }
+
+/* 4k res */
+    @media (min-width: 2500px){
+        .panel header h1 {
+          font-size: 70px !important;
+          padding-top: 65px; }
+        #firstbutton, .start, .esc {
+            font-size: 70px !important; }
+        .panel header {
+        width: 100%;
+        height: 13%;
+        background-color: #C41C29; }
+        .intro {
+        height:77% !important;}
+        .talk .text .message, .talk .text .comment {
+        font-size: 65px !important;
+        padding: 45px !important; }
+         .talk input {
+        font-size: 90px !important;
+        width: 48% !important; }
+        }
+
+/*for the big fucking screens*/
+
+        @media (min-width: 5000px) {
+        .panel header h1 {
+        font-size: 140px !important;
+        padding-top: 120px !important; }
+        #firstbutton, .start, .esc {
+        font-size: 120px !important; }
+        .panel header {
+        width: 100%;
+        height: 13%;
+        background-color: #C41C29; }
+        .intro {
+        height:77% !important;}
+        .talk .text {
+        border: 15px solid !important;}
+        .talk .text .message, .talk .text .comment {
+        font-size: 100px !important;
+        padding: 100px !important; }
+         .talk input {
+        font-size: 120px !important;
+        width: 48% !important;
+        height: 24% !important;
+        margin-top: 5% !important;}
+        
+        }
+
+#firstbutton {
+  *zoom: 1;
+  width: auto;
+  max-width: 100%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  left: 0;
+  right: 0;
+  border: 0;
+  font-size: 2.25em;
+  width: 100%;
+  height: 10%;
+  background-color: #C41C29;
+  color: #fff; }
+  @media (max-width: 980px) {
+    #firstbutton {
+      height: 10%;
+      font-size: 2em !important;}
+  }
+  @media (max-width: 410px) {
+    #firstbutton {
+      height: 15%; 
+      padding-bottom: 30px;
+      width: 100%; } }
+  #firstbutton:before, #firstbutton:after {
+    content: '';
+    display: table; }
+  #firstbutton:after {
+    clear: both; }
+
+.start {
+  *zoom: 1;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  float: left;
+  left: 0;
+  right: 0;
+  border: 0;
+  font-size: 2.1em;
+  max-width: 100%;
+  width: 85%;
+  height: 10%;
+  background-color: #C41C29;
+  color: #fff; }
+  @media (max-width: 980px) {
+    .start {
+      font-size: 25px;
+      max-width: 100%;
+      width: 80%;}
+      }
+  @media (max-width: 410px) {
+    .start {
+      width: 70%;
+      font-size: 24px; } }
+  .start:before, .start:after {
+    content: '';
+    display: table; }
+  .start:after {
+    clear: both; }
+
+.esc {
+  *zoom: 1;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  float: right;
+  left: 0;
+  right: 0;
+  border: 0;
+  font-size: 2.1em;
+  max-width: 100%;
+  width: 15%;
+  height: 10%;
+  background-color: #F3E94B; }
+  @media (max-width: 980px) {
+    .esc {
+      max-width: 100%;
+      width: 20%;
+      font-size: 25px;} }
+  @media (max-width: 410px) {
+    .esc {
+      width: 30%;
+      font-size: 24px; } }
+  .esc:before, .esc:after {
+    content: '';
+    display: table; }
+  .esc:after {
+    clear: both; }
+
+.talk {
+  *zoom: 1;
+  width: auto;
+  max-width: 100%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  height: 77%;
+  background-image: url(../img/city2.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+background-position: bottom;
+}
+  @media (max-width: 980px) {
+    .talk {
+      height: 78%; } }
+  @media (max-width: 410px) {
+    .talk {
+      background-image: url(../img/hero.svg);
+      width: 100%;
+      height: 75%;
+      background-size: 70%;}
+  }
+  .talk:before, .talk:after {
+    content: '';
+    display: table; }
+  
+  .talk input {
+    font-size: 40px;
+      margin-top: 5.6%;
+      margin-left: 34%;
+    height: 21%;
+    width: 48%;
+    border: 0;
+    outline: none;
+    background-color: transparent;
+}
+
+.box {
+    float: left;
+    display: block;
+    background-image: url(../img/hero-talk.svg);
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+    margin-left: 7%;
+    height: 100%;
+    width: 85%;
+    
+}
+
+    @media (max-width: 980px) {
+      .talk input {
+        float: left;
+        font-size: 30px;
+        height: 20%;
+        border: 0; } }
+    @media (max-width: 410px) {
+      .talk input {
+        float: left;
+        width: 300px;
+        height: 50px;
+        font-size: 16px;
+        margin-left: 5%;
+        margin-top: 10%;} }
+  .talk .text {
+      text-align: center;
+    float: left;
+    width: 60%;
+    margin-top: 1.5%;
+    margin-left: 20%;
+    background-color: #FFFFFF;
+    border: 5px solid #000000; }
+
+    @media (max-width: 980px) {
+      .talk .text {
+        font-size: 30px; }
+      .talk .text .message, .talk .text .comment {
+      font-size: 22px;
+      padding: 5px !important; }
+    }
+
+    @media (max-width: 410px) {
+      .talk .text {
+        *zoom: 1;
+        width: auto;
+        max-width: 100%;
+        float: none;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 16px;
+        width: 360px;
+        float: left;
+        margin: 5%;
+        color: #eee; }
+        .talk .text:before, .talk .text:after {
+          content: '';
+          display: table; }
+        .talk .text:after {
+          clear: both; } }
+    .talk .text .message, .talk .text .comment {
+      color: #000000;
+      font-size: 25px;
+      padding: 17px; }
+
+.intro {
+  height: 77%;
+  *zoom: 1;
+  width: auto;
+  max-width: 100%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  background-image: url(../img/sun.svg);
+  background-size: cover; }
+  @media (max-width: 410px) {
+    .intro {
+      height: 75% !important;
+      background-position: center; } }
+  @media (max-width: 980px) {
+    .intro {
+      height: 78%; } }
+  .intro:before, .intro:after {
+    content: '';
+    display: table; }
+  .intro:after {
+    clear: both; }
+  .intro .column {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    *zoom: 1;
+    width: auto;
+    max-width: 1410px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+    width: 50%;
+    height: 400px; }
+    .intro .column:before, .intro .column:after {
+      content: '';
+      display: table; }
+    .intro .column:after {
+      clear: both; }
+    .intro .column:last-child {
+      margin-right: 0%; }
+    .intro .column:before, .intro .column:after {
+      content: '';
+      display: table; }
+    .intro .column:after {
+      clear: both; }
+    .intro .column img {
+      *zoom: 1;
+      width: auto;
+      max-width: 1410px;
+      float: none;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 0;
+      padding-right: 0; }
+      .intro .column img:before, .intro .column img:after {
+        content: '';
+        display: table; }
+      .intro .column img:after {
+        clear: both; }
+  @media screen and (max-width: 600px) {
+    .intro {
+      background-size: cover; } }
